@@ -103,6 +103,7 @@ const Pizza = () => {
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
+                data-cy="name"
               />
               {errors.name.length > 3 ? <p className="error">{errors.name}</p> : null}
             </label>
@@ -115,6 +116,7 @@ const Pizza = () => {
                 value={formState.sizes}
                 name="sizes"
                 onChange={handleChange}
+                multiple
               >
                 {sizes.map(size => {
                   return <option value={size}>{size}</option>;
