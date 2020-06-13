@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import { Container, Row } from "reactstrap";
 import axios from "axios";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 
 const Pizza = () => {
   const [formState, setFormState] = useState({
@@ -116,7 +117,6 @@ const Pizza = () => {
                 value={formState.sizes}
                 name="sizes"
                 onChange={handleChange}
-                multiple
               >
                 {sizes.map(size => {
                   return <option value={size}>{size}</option>;
@@ -133,6 +133,7 @@ const Pizza = () => {
                     <input
                       type="checkbox"
                       name={topping}
+                      id={topping}
                       checked={formState.item}
                       onChange={handleChange}
                     />
@@ -154,7 +155,9 @@ const Pizza = () => {
               />
             </label>
           </Row>
-          <button type="submit">Order Now!</button>
+          <Link to="/completed">
+            <button type="submit">Order Now!</button>
+          </Link>
         </form>
       </Container>
     </div>
