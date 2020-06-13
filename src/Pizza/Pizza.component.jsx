@@ -62,7 +62,6 @@ const Pizza = () => {
   };
 
   const handleSubmit = e => {
-    e.persist();
     e.preventDefault();
     axios
       .post("https://reqres.in/api/users", formState)
